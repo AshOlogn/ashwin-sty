@@ -1,6 +1,7 @@
 %packages
 \usepackage{mdframed}
 \usepackage{cancel}
+\usepackage[shortlabels]{enumitem}
 
 %general styling
 \newcommand{\bb}[1]{\textbf{#1}}
@@ -9,8 +10,9 @@
 \newcommand{\nm}[1]{\textrm{#1}}
 \newcommand{\scr}[1]{\mathcal{#1}}
 \newcommand{\Span}[1]{\textrm{Span}\{#1\}}
+\newcommand{\sgn}{\textrm{sgn}}
 
-%math keywords
+%letters
 \newcommand{\A}{\mathbb{A}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\E}{\mathbb{E}}
@@ -20,23 +22,31 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 
-\newcommand{\Var}{\textrm{Var}}
-\newcommand{\var}{\textrm{var}}
-\newcommand{\Cov}{\textrm{Cov}}
-\newcommand{\VC}{\textrm{VC}}
-\newcommand{\MSE}{\textrm{MSE}}
-\newcommand{\bias}{\textrm{bias}}
+%general math
+\newcommand{\argmax}{\textrm{arg max}}
+\newcommand{\st}{\;\;\textrm{s.t.}\;\;}
+
+%(linear) algebra
 \newcommand{\Hom}{\textrm{Hom}}
 \newcommand{\Iso}{\textrm{Iso}}
 \newcommand{\id}{\textrm{id}}
 \newcommand{\Ker}{\textrm{Ker}}
 \newcommand{\im}{\textrm{im}}
 \newcommand{\Aut}{\textrm{Aut}}
-\newcommand{\argmax}{\textrm{arg max}}
+\newcommand{\vol}{\textrm{vol}}
+
+%topology
+\newcommand{\Int}{\textrm{Int}}
+
+%probability/statistics
+\newcommand{\Var}{\textrm{Var}}
+\newcommand{\var}{\textrm{var}}
+\newcommand{\Cov}{\textrm{Cov}}
+\newcommand{\MSE}{\textrm{MSE}}
+\newcommand{\bias}{\textrm{bias}}
+\newcommand{\VC}{\textrm{VC}}
 \newcommand{\KL}[2]{\textrm{KL}(#1 \| #2)}
 \newcommand{\Pois}{\textrm{Pois}}
-\newcommand{\st}{\;\;\textrm{s.t.}\;\;}
-\newcommand{\vol}{\textrm{vol}}
 
 %math symbols
 \newcommand{\vp}{\varphi}
@@ -54,73 +64,10 @@
 \newcommand{\normal}{\triangleleft}
 
 \newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\convm}{\xrightarrow{\enskip m \enskip}}
 
-%math environments
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{conj}[thm]{Conjecture}
-\newtheorem{quest}[thm]{Question}
-\newtheorem{claim}[thm]{Claim}
-
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem{defns}[thm]{Definitions}
-\newtheorem{con}[thm]{Construction}
-\newtheorem{exmp}[thm]{Example}
-\newtheorem{exmps}[thm]{Examples}
-\newtheorem{notn}[thm]{Notation}
-\newtheorem{notns}[thm]{Notations}
-\newtheorem{addm}[thm]{Addendum}
-\newtheorem{exer}[thm]{Exercise}
-\newtheorem{exerh}[thm]{$\text{Exercise}^*$}
-
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{rems}[thm]{Remarks}
-\newtheorem{warn}[thm]{Warning}
-\newtheorem{sch}[thm]{Scholium}
-
-%environments
-
-%proof env
-\newmdenv[
-	topline=false,
-	bottomline=false,
-	rightline=false,
-	skipabove=\topsep,
-	skipbelow=\topsep
-]{leftrule}
-\newenvironment{Proof}[1][\unskip]
-{\noindent\emph{Proof #1:}\begin{adjustwidth}{0.5cm}{}
-\begin{leftrule}
-}
-{ 
-\end{leftrule}
-\flushright $\square$ \flushleft
-\end{adjustwidth}}
-
-%solution env
-
-\newenvironment{Solution}[1][\unskip]
-{\noindent\emph{Solution #1:}\vspace{0.1cm}\begin{adjustwidth}{0.5cm}{}
-\begin{leftrule}
-}
-{ 
-\end{leftrule}
-\flushright $\blacksquare$ \flushleft
-\end{adjustwidth}}
+%proof environments
+\newtheorem{lemma}{Lemma}
+\newtheorem{defn}{Definition}
 
 
-
-%lecture date box
-
-\newcommand{\lecture}[1]{
-\vspace{-0.3cm}
-\colorlet{currentcolor}{.}
-\begin{center}
-{\color{blue}
-\fbox{\color{currentcolor}\small \textcolor{blue}{Lecture #1}}}
-\end{center}
-}
